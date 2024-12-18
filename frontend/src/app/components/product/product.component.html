@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Product Marketplace</h2>
+
+  <!-- Add Product Form -->
+  <form (submit)="onSubmit()">
+    <input [(ngModel)]="newProduct.name" placeholder="Product Name" required />
+    <input [(ngModel)]="newProduct.description" placeholder="Description" required />
+    <input [(ngModel)]="newProduct.price" type="number" placeholder="Price" required />
+    <button type="submit" class="btn btn-primary">Add Product</button>
+  </form>
+
+  <!-- Product List -->
+  <ul>
+    <li *ngFor="let product of products">
+      <strong>{{ product.name }}</strong> - {{ product.description }} - ${{ product.price }}
+    </li>
+  </ul>
+</div>
